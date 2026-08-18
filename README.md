@@ -28,7 +28,7 @@ buttons show a message directing users to the full connector.
 
 1. Select the branch for your Odoo version.
 2. Copy the repository contents into an Odoo addons path.
-3. Update the Apps list and install **Orchida UAE E-Invoicing (Trial Demo)**.
+3. Update the Apps list and install **Orchida UAE E-Invoicing Connector for Odoo**.
 
 The module depends on Odoo `base`, `account`, and `product`.
 
