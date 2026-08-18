@@ -15,6 +15,7 @@
     'author': 'Orchida-Soft',
     'website': 'https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo',
     'category': 'Accounting',
+    'images': ['images/main_screenshot.png'],
     'depends': ['base', 'account', 'product'],
     'data': [
         'security/ir.model.access.csv',
