@@ -12,7 +12,7 @@
         contact Orchida.
     """,
     'author': 'Orchida-Soft',
-    'website': 'https://orchida-soft.com',
+    'website': 'https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo',
     'category': 'Accounting',
     'depends': ['base', 'account', 'product'],
     'data': [
