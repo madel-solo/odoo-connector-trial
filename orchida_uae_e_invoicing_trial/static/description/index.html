@@ -4,53 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Orchida UAE E-Invoicing Connector for Odoo</title>
-    <style>
-        body { margin: 0; color: #333; background: #fff; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
-        .container { max-width: 980px; margin: 0 auto; padding: 34px 24px 50px; }
-        .header { display: flex; align-items: center; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid #ddd; }
-        .header img { width: 110px; height: auto; }
-        .header h1 { margin: 0 0 6px; color: #714b67; font-size: 30px; line-height: 1.2; }
-        .version { margin: 0; color: #666; font-size: 15px; }
-        .intro { margin: 28px 0; padding: 20px 22px; background: #f7f5f8; border-left: 4px solid #714b67; }
-        h2 { margin: 34px 0 12px; padding-bottom: 7px; color: #714b67; border-bottom: 1px solid #ddd; font-size: 23px; }
-        h3 { margin: 20px 0 6px; color: #444; font-size: 17px; }
-        p { margin: 0 0 12px; }
-        ul, ol { margin: 10px 0 16px; padding-left: 24px; }
-        li { margin: 5px 0; }
-        .notice { margin: 24px 0; padding: 16px 18px; background: #fff8e6; border: 1px solid #ead9a7; }
-        .notice strong { color: #704f13; }
-        table { width: 100%; margin: 14px 0 22px; border-collapse: collapse; }
-        th, td { padding: 10px 12px; border: 1px solid #ddd; text-align: left; vertical-align: top; }
-        th { width: 30%; color: #444; background: #f7f7f7; font-weight: bold; }
-        a { color: #714b67; font-weight: bold; }
-        .contact { margin-top: 30px; padding: 20px 22px; background: #f7f5f8; text-align: center; }
-        .footer { margin-top: 32px; color: #777; font-size: 13px; text-align: center; }
-        @media (max-width: 620px) {
-            .container { padding: 24px 16px 38px; }
-            .header { align-items: flex-start; }
-            .header img { width: 86px; }
-            .header h1 { font-size: 24px; }
-            th, td { display: block; width: auto; }
-            th { border-bottom: 0; }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <img src="icon.png" alt="Orchida Soft logo">
+    <div style="max-width:1180px; margin:0 auto; padding:24px 18px 44px; font-family:Arial,Helvetica,sans-serif; color:#333; line-height:1.6;">
+        <div style="display:flex; align-items:center; border-bottom:1px solid #d9d9d9; padding:12px 0 24px; margin-bottom:24px;">
+            <img src="icon.png" alt="Orchida Soft logo" style="width:100px; height:auto; margin-right:20px;">
             <div>
-                <h1>Orchida UAE E-Invoicing Connector for Odoo</h1>
-                <p class="version">Odoo 16 | UAE e-invoicing connector and integration</p>
+                <h1 style="margin:0 0 6px; color:#714b67; font-size:30px; line-height:1.2;">Orchida UAE E-Invoicing Connector for Odoo</h1>
+                <p style="margin:0; color:#666; font-size:15px;">Odoo 16 | UAE e-invoicing connector and integration</p>
             </div>
-        </header>
-
-        <div class="intro">
-            <p><strong>Orchida UAE E-Invoicing Connector for Odoo</strong> connects Odoo customer invoicing workflows with the Orchida UAE e-invoicing API. It validates invoice data, builds the required submission payload, sends eligible invoices and credit notes, and records the response and status history inside Odoo.</p>
         </div>
 
-        <h2>Full Connector Features</h2>
-        <ul>
+        <div style="background:#f7f5f8; border-left:4px solid #714b67; padding:20px 22px; margin:0 0 26px;">
+            <p style="margin:0;"><strong>Orchida UAE E-Invoicing Connector for Odoo</strong> connects Odoo customer invoicing workflows with the Orchida UAE e-invoicing API. It validates invoice data, builds the required submission payload, sends eligible invoices and credit notes, and records the response and status history inside Odoo.</p>
+        </div>
+
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">Full Connector Features</h2>
+        <ul style="margin:10px 0 18px; padding-left:24px;">
             <li>Automatic submission when eligible customer invoices and credit notes are posted.</li>
             <li>Journal-level control with automatic or manual submission modes.</li>
             <li>Pre-submission validation for customer data, invoice lines, taxes, payment details, emirates, and credit notes.</li>
@@ -60,8 +30,8 @@
             <li>Failure classification for document, configuration, and technical issues.</li>
         </ul>
 
-        <h2>UAE Invoice Scenarios</h2>
-        <ul>
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">UAE Invoice Scenarios</h2>
+        <ul style="margin:10px 0 18px; padding-left:24px;">
             <li>Standard customer invoices and customer credit notes.</li>
             <li>Credit-note reason codes and links to the original invoice.</li>
             <li>Reverse charge (RCM) support with GTIN, NatureCode, HS, and SAC readiness checks.</li>
@@ -71,8 +41,8 @@
             <li>UAE tax categories, exemption codes, and emirate-aware buyer address mapping.</li>
         </ul>
 
-        <h2>Configuration and Odoo Workflow</h2>
-        <ul>
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">Configuration and Odoo Workflow</h2>
+        <ul style="margin:10px 0 18px; padding-left:24px;">
             <li>Company settings for the Orchida API base URL, API token, company ID, and automatic submission.</li>
             <li>Customer e-invoice data including TRN/VAT, endpoint ID, scheme, agency information, tax scheme, and payment instruction.</li>
             <li>Journal setting to include or exclude customer invoices from submission.</li>
@@ -80,11 +50,11 @@
             <li>Invoice actions for submission, status review, retry, correction, and submission history.</li>
         </ul>
 
-        <h2>Accounts Payable and Documents</h2>
-        <p>The connector also includes accounts-payable document models and views for received purchase invoice data, XML parsing, PDF rendering, and vendor-bill creation workflows. These workflows are available according to the configured AP synchronization setup.</p>
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">Accounts Payable and Documents</h2>
+        <p style="margin:0 0 16px;">The connector also includes accounts-payable document models and views for received purchase invoice data, XML parsing, PDF rendering, and vendor-bill creation workflows. These workflows are available according to the configured AP synchronization setup.</p>
 
-        <h2>Typical Workflow</h2>
-        <ol>
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">Typical Workflow</h2>
+        <ol style="margin:10px 0 18px; padding-left:24px;">
             <li>Configure the company, customer, tax, product, journal, and unit-code information.</li>
             <li>Post an eligible customer invoice or credit note.</li>
             <li>Validate the document and build the UAE e-invoice payload.</li>
@@ -92,36 +62,35 @@
             <li>Review the API response, status, UUID, attempts, and any required correction.</li>
         </ol>
 
-        <div class="notice">
-            <p><strong>About this public repository</strong></p>
-            <p>This public package is the UI-only evaluation edition. It mirrors the connector's screens, fields, menus, and reports, but does not call the API, store production credentials, validate against the external service, submit invoices, or run production synchronization jobs. Use the full Orchida connector for live integration.</p>
+        <div style="background:#fff8e6; border:1px solid #ead9a7; padding:16px 18px; margin:24px 0;">
+            <p style="margin:0 0 8px; color:#704f13;"><strong>About this public repository</strong></p>
+            <p style="margin:0;">This public package is the UI-only evaluation edition. It mirrors the connector's screens, fields, menus, and reports, but does not call the API, store production credentials, validate against the external service, submit invoices, or run production synchronization jobs. Use the full Orchida connector for live integration.</p>
         </div>
 
-        <h2>Installation</h2>
-        <ol>
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">Installation</h2>
+        <ol style="margin:10px 0 18px; padding-left:24px;">
             <li>Use the branch matching your Odoo version.</li>
-            <li>Copy the module files into an Odoo addons path.</li>
+            <li>Copy the module folder into an Odoo addons path.</li>
             <li>Update the Apps list and install <strong>Orchida UAE E-Invoicing Connector for Odoo</strong>.</li>
             <li>Open the E-Invoicing menu to review the available screens.</li>
         </ol>
 
-        <h2>Compatibility and Technical Information</h2>
-        <table>
-            <tr><th>Odoo version</th><td>Odoo 16 Community or Enterprise</td></tr>
-            <tr><th>Dependencies</th><td>base, account, product</td></tr>
-            <tr><th>Technical name</th><td>orchida_uae_e_invoicing_trial</td></tr>
-            <tr><th>License</th><td>Odoo Proprietary License v1.0 (OPL-1)</td></tr>
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">Compatibility and Technical Information</h2>
+        <table style="width:100%; border-collapse:collapse; margin:14px 0 22px;">
+            <tr><th style="width:30%; padding:10px 12px; border:1px solid #ddd; background:#f7f7f7; text-align:left;">Odoo version</th><td style="padding:10px 12px; border:1px solid #ddd;">Odoo 16 Community or Enterprise</td></tr>
+            <tr><th style="padding:10px 12px; border:1px solid #ddd; background:#f7f7f7; text-align:left;">Dependencies</th><td style="padding:10px 12px; border:1px solid #ddd;">base, account, product</td></tr>
+            <tr><th style="padding:10px 12px; border:1px solid #ddd; background:#f7f7f7; text-align:left;">Technical name</th><td style="padding:10px 12px; border:1px solid #ddd;">orchida_uae_e_invoicing_trial</td></tr>
+            <tr><th style="padding:10px 12px; border:1px solid #ddd; background:#f7f7f7; text-align:left;">License</th><td style="padding:10px 12px; border:1px solid #ddd;">Odoo Proprietary License v1.0 (OPL-1)</td></tr>
         </table>
 
-        <h2>Production Integration</h2>
-        <p>For API connectivity, credentials, validation, invoice submission, monitoring, and production support, visit the <a href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo">Orchida Odoo e-invoicing integration page</a>.</p>
+        <h2 style="margin:30px 0 10px; padding-bottom:6px; color:#714b67; border-bottom:1px solid #ddd; font-size:23px;">Production Integration</h2>
+        <p style="margin:0 0 16px;">For API connectivity, credentials, validation, invoice submission, monitoring, and production support, visit the <a href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo" target="_blank" rel="noopener" style="color:#714b67; font-weight:bold;">Orchida Odoo e-invoicing integration page</a>.</p>
 
-        <div class="contact">
-            <p><strong>Orchida Soft Business Solutions</strong></p>
-            <p><a href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo">Learn more about the Orchida Odoo integration</a></p>
+        <div style="background:#f7f5f8; text-align:center; padding:20px 22px; margin-top:30px;">
+            <p style="margin:0 0 8px;"><strong>Orchida Soft Business Solutions</strong></p>
+            <p style="margin:0;"><a href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo" target="_blank" rel="noopener" style="color:#714b67; font-weight:bold;">Learn more about the Orchida Odoo integration</a></p>
         </div>
-
-        <div class="footer">Orchida Soft | UAE E-Invoicing Connector for Odoo</div>
+        <p style="margin:32px 0 0; color:#777; font-size:13px; text-align:center;">Orchida Soft | UAE E-Invoicing Connector for Odoo</p>
     </div>
 </body>
 </html>
