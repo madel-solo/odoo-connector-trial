@@ -6,10 +6,10 @@ Public UI-only trial modules for the Orchida UAE E-Invoicing Connector.
 
 | Branch | Odoo version |
 | --- | --- |
-| `v16` | Odoo 16 |
-| `v17` | Odoo 17 |
-| `v18` | Odoo 18 |
-| `v19` | Odoo 19 |
+| `16.0` | Odoo 16 |
+| `17.0` | Odoo 17 |
+| `18.0` | Odoo 18 |
+| `19.0` | Odoo 19 |
 
 Each version branch contains the complete `orchida_uae_e_invoicing_trial`
 module at repository root.
