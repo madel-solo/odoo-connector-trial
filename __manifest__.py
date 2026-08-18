@@ -1,7 +1,7 @@
 {
-    'name': 'Orchida UAE E-Invoicing (Trial Demo)',
+    'name': 'Orchida UAE E-Invoicing Connector for Odoo',
     'version': '17.0.1.0.3',
-    'summary': 'UI-only trial demo of the Orchida UAE E-Invoicing Connector',
+    'summary': 'UAE e-invoicing integration interface for Odoo',
     'description': """
         Trial/demo module showing the Orchida UAE E-Invoicing Connector's
         screens and views as UI only.
