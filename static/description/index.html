@@ -3,162 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Orchida UAE E-Invoicing Trial for Odoo 19</title>
+    <title>Orchida UAE E-Invoicing Connector for Odoo</title>
     <style>
-        :root {
-            --navy: #101b3d;
-            --blue: #1769e0;
-            --cyan: #18b6c9;
-            --ink: #172033;
-            --muted: #5d687b;
-            --line: #dce4f0;
-            --soft: #f4f7fc;
-            --white: #ffffff;
-        }
-        * { box-sizing: border-box; }
         body {
             margin: 0;
-            color: var(--ink);
-            background: var(--soft);
+            color: #333333;
+            background: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
         }
-        a { color: var(--blue); }
-        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-        .hero {
-            color: var(--white);
-            background: linear-gradient(135deg, var(--navy), #173b76 65%, #0d91a8);
-            padding: 52px 0 64px;
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 34px 24px 50px;
         }
-        .brand { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
-        .brand img { width: 82px; height: auto; background: var(--white); border-radius: 12px; padding: 8px; }
-        .brand strong { display: block; font-size: 18px; letter-spacing: .04em; }
-        .brand span { color: #c7d9f6; font-size: 13px; }
-        .eyebrow {
-            display: inline-block;
-            padding: 6px 12px;
-            border: 1px solid rgba(255,255,255,.35);
-            border-radius: 999px;
-            color: #d8f9ff;
-            font-size: 12px;
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #dddddd;
+        }
+        .header img {
+            width: 110px;
+            height: auto;
+        }
+        .header h1 {
+            margin: 0 0 6px;
+            color: #714b67;
+            font-size: 30px;
+            line-height: 1.2;
+        }
+        .version {
+            margin: 0;
+            color: #666666;
+            font-size: 15px;
+        }
+        .intro {
+            margin: 28px 0;
+            padding: 20px 22px;
+            background: #f7f5f8;
+            border-left: 4px solid #714b67;
+        }
+        h2 {
+            margin: 34px 0 12px;
+            padding-bottom: 7px;
+            color: #714b67;
+            border-bottom: 1px solid #dddddd;
+            font-size: 23px;
+        }
+        h3 {
+            margin: 20px 0 6px;
+            color: #444444;
+            font-size: 17px;
+        }
+        p { margin: 0 0 12px; }
+        ul, ol { margin: 10px 0 16px; padding-left: 24px; }
+        li { margin: 5px 0; }
+        .notice {
+            margin: 22px 0;
+            padding: 16px 18px;
+            background: #fff8e6;
+            border: 1px solid #ead9a7;
+        }
+        .notice strong { color: #704f13; }
+        table {
+            width: 100%;
+            margin: 14px 0 22px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid #dddddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            width: 30%;
+            color: #444444;
+            background: #f7f7f7;
             font-weight: bold;
-            letter-spacing: .12em;
-            text-transform: uppercase;
         }
-        h1 { max-width: 780px; margin: 18px 0 16px; font-size: 46px; line-height: 1.08; letter-spacing: -.03em; }
-        .lead { max-width: 720px; margin: 0; color: #e2ecfb; font-size: 19px; }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-        .button { display: inline-block; padding: 12px 18px; border-radius: 8px; font-weight: bold; text-decoration: none; }
-        .button-primary { color: var(--navy); background: var(--white); }
-        .button-secondary { color: var(--white); border: 1px solid rgba(255,255,255,.45); }
-        main { padding: 42px 0 64px; }
-        .intro { max-width: 820px; margin-bottom: 34px; }
-        h2 { margin: 0 0 12px; color: var(--navy); font-size: 30px; line-height: 1.2; }
-        h3 { margin: 0 0 8px; color: var(--navy); font-size: 18px; }
-        p { margin: 0 0 14px; }
-        .muted { color: var(--muted); }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 26px 0 42px; }
-        .card { padding: 24px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 8px 24px rgba(16,27,61,.05); }
-        .card .mark { width: 34px; height: 34px; display: grid; place-items: center; margin-bottom: 18px; color: var(--white); background: linear-gradient(135deg, var(--blue), var(--cyan)); border-radius: 9px; font-weight: bold; }
-        .split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; align-items: start; margin-top: 22px; }
-        .panel { padding: 26px; border-radius: 14px; background: var(--navy); color: var(--white); }
-        .panel h2 { color: var(--white); }
-        .panel p, .panel li { color: #d9e5f7; }
-        ul { margin: 12px 0 0; padding-left: 21px; }
-        li { margin: 7px 0; }
-        .notice { padding: 22px 24px; border-left: 5px solid #efad3d; border-radius: 10px; background: #fff8e9; }
-        .notice h3 { color: #7b5011; }
-        .steps { counter-reset: step; list-style: none; padding: 0; margin: 18px 0 0; }
-        .steps li { counter-increment: step; display: flex; gap: 12px; margin: 12px 0; }
-        .steps li:before { content: counter(step); flex: 0 0 26px; height: 26px; color: var(--white); background: var(--blue); border-radius: 50%; text-align: center; line-height: 26px; font-weight: bold; }
-        .cta { margin-top: 42px; padding: 32px; color: var(--white); background: linear-gradient(135deg, #1769e0, #18aabd); border-radius: 16px; }
-        .cta h2 { color: var(--white); }
-        .cta a { color: var(--white); font-weight: bold; }
-        footer { padding: 22px 0 34px; color: var(--muted); font-size: 13px; text-align: center; }
-        @media (max-width: 720px) {
-            .wrap { padding: 0 18px; }
-            .hero { padding: 34px 0 44px; }
-            .brand { margin-bottom: 34px; }
-            h1 { font-size: 35px; }
-            .lead { font-size: 17px; }
-            .grid, .split { grid-template-columns: 1fr; }
-            main { padding-top: 32px; }
+        a { color: #714b67; font-weight: bold; }
+        .contact {
+            margin-top: 30px;
+            padding: 20px 22px;
+            background: #f7f5f8;
+            text-align: center;
+        }
+        .footer {
+            margin-top: 32px;
+            color: #777777;
+            font-size: 13px;
+            text-align: center;
+        }
+        @media (max-width: 620px) {
+            .container { padding: 24px 16px 38px; }
+            .header { align-items: flex-start; }
+            .header img { width: 86px; }
+            .header h1 { font-size: 24px; }
+            th, td { display: block; width: auto; }
+            th { border-bottom: 0; }
         }
     </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="wrap">
-            <div class="brand">
-                <img src="icon.png" alt="Orchida Soft logo">
-                <div><strong>ORCHIDA SOFT</strong><span>Business Solutions</span></div>
+    <div class="container">
+        <header class="header">
+            <img src="icon.png" alt="Orchida Soft logo">
+            <div>
+                <h1>Orchida UAE E-Invoicing Connector for Odoo</h1>
+                <p class="version">Odoo 19 | UAE e-invoicing interface and workflow</p>
             </div>
-            <span class="eyebrow">UI-only trial for Odoo 19</span>
-            <h1>Explore the UAE e-invoicing workflow before going live.</h1>
-            <p class="lead">A realistic, safe demonstration of the Orchida UAE E-Invoicing Connector screens inside Odoo. Review the user experience without sending data to an external service.</p>
-            <div class="hero-actions">
-                <a class="button button-primary" href="#installation">Install the trial</a>
-                <a class="button button-secondary" href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo">View the production integration</a>
-            </div>
+        </header>
+
+        <div class="intro">
+            <p><strong>Orchida UAE E-Invoicing Connector for Odoo</strong> provides an Odoo interface for UAE e-invoicing workflows. This package lets teams review the connector screens, fields, menus, and invoice workflows in an Odoo 19 database before activating the full production integration.</p>
         </div>
-    </header>
 
-    <main>
-        <div class="wrap">
-            <section class="intro">
-                <h2>See the connector experience in your own Odoo database</h2>
-                <p class="muted">The Orchida UAE E-Invoicing Trial mirrors the connector's menus, forms, fields, configuration screens, and workflow surfaces for Odoo 19. It is designed for evaluation, demonstrations, and internal review before choosing the full production integration.</p>
-            </section>
+        <h2>Key Features</h2>
+        <ul>
+            <li>Invoice forms with UAE e-invoicing fields and status indicators.</li>
+            <li>Submission log views for invoice status, responses, attempts, and synchronization details.</li>
+            <li>Company-level e-invoicing configuration and connector settings screens.</li>
+            <li>Partner, journal, tax, product, and unit-of-measure workflow support screens.</li>
+            <li>Accounts payable invoice screens with XML and document workflow views.</li>
+            <li>Allowance and charge workflow screens for invoice document adjustments.</li>
+        </ul>
 
-            <section class="grid" aria-label="Trial features">
-                <article class="card"><div class="mark">01</div><h3>Invoice workspace</h3><p class="muted">Review the invoice fields, tax status indicators, submission actions, and invoice-level integration layout.</p></article>
-                <article class="card"><div class="mark">02</div><h3>Submission visibility</h3><p class="muted">Explore the submission log, status columns, response details, retry states, and company-aware controls.</p></article>
-                <article class="card"><div class="mark">03</div><h3>Configuration screens</h3><p class="muted">Walk through company settings, e-invoice configuration, partner details, journals, products, and tax views.</p></article>
-                <article class="card"><div class="mark">04</div><h3>Document workflows</h3><p class="muted">Inspect AP invoice screens, unit-of-measure mapping, unit-code data, and allowance or charge workflows.</p></article>
-            </section>
+        <h2>Available Screens</h2>
+        <p>The module mirrors the user interface of the Orchida UAE E-Invoicing Connector across the following Odoo areas:</p>
+        <ul>
+            <li>Accounting settings and company configuration.</li>
+            <li>Customer invoices, invoice lines, taxes, and journals.</li>
+            <li>Products, product templates, units of measure, and unit-code mappings.</li>
+            <li>E-invoice submission records and response details.</li>
+            <li>Orchida accounts payable invoice records and PDF report actions.</li>
+            <li>Document allowance and charge wizard screens.</li>
+        </ul>
 
-            <section class="split">
-                <div class="card">
-                    <h2>What is included</h2>
-                    <ul>
-                        <li>Odoo 19-compatible trial module structure.</li>
-                        <li>Connector-style menus, views, fields, and sample records.</li>
-                        <li>Safe demo actions that explain the full connector requirement.</li>
-                        <li>Standard Odoo invoice posting behavior for local evaluation.</li>
-                    </ul>
-                </div>
-                <div class="notice">
-                    <h3>Important: this is a UI-only trial</h3>
-                    <p>The trial does not call an API, submit invoices, validate tax data, store credentials, build production payloads, or run background jobs. Use the full Orchida connector for production integration.</p>
-                </div>
-            </section>
-
-            <section id="installation" class="split">
-                <div>
-                    <h2>Install in a few steps</h2>
-                    <ol class="steps">
-                        <li>Use this module with Odoo 19.</li>
-                        <li>Copy the branch contents into an addons path.</li>
-                        <li>Update the Apps list and install <strong>Orchida UAE E-Invoicing (Trial Demo)</strong>.</li>
-                        <li>Open the E-Invoicing menu and explore the screens.</li>
-                    </ol>
-                </div>
-                <div class="card">
-                    <h3>Compatibility</h3>
-                    <p class="muted">Odoo 19 Community or Enterprise, with the standard <code>base</code>, <code>account</code>, and <code>product</code> modules installed.</p>
-                    <h3>License</h3>
-                    <p class="muted">Odoo Proprietary License v1.0 (OPL-1). Public source access is provided for evaluation; redistribution and resale are not permitted.</p>
-                </div>
-            </section>
-
-            <section class="cta">
-                <h2>Ready for production?</h2>
-                <p>Move from interface evaluation to a supported UAE e-invoicing integration with Orchida Soft.</p>
-                <a href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo">Learn about the Orchida Odoo integration</a>
-            </section>
+        <div class="notice">
+            <p><strong>Important: this package is for interface evaluation.</strong></p>
+            <p>It does not send invoices to an external API, validate tax data against a service, store production credentials, build production payloads, or run submission cron jobs. Integration actions display a message directing the user to the full Orchida connector.</p>
         </div>
-    </main>
 
-    <footer><div class="wrap">Orchida Soft Business Solutions | UAE E-Invoicing Connector Trial for Odoo 19</div></footer>
+        <h2>Installation</h2>
+        <ol>
+            <li>Use the branch matching your Odoo version.</li>
+            <li>Copy the module files into an Odoo addons path.</li>
+            <li>Update the Apps list and install <strong>Orchida UAE E-Invoicing Connector for Odoo</strong>.</li>
+            <li>Open the E-Invoicing menu to review the available screens.</li>
+        </ol>
+
+        <h2>Compatibility and Technical Information</h2>
+        <table>
+            <tr><th>Odoo version</th><td>Odoo 19 Community or Enterprise</td></tr>
+            <tr><th>Dependencies</th><td>base, account, product</td></tr>
+            <tr><th>Technical name</th><td>orchida_uae_e_invoicing_trial</td></tr>
+            <tr><th>License</th><td>Odoo Proprietary License v1.0 (OPL-1)</td></tr>
+        </table>
+
+        <h2>Production Integration</h2>
+        <p>For API connectivity, credentials, validation, invoice submission, monitoring, and production support, visit the <a href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo">Orchida Odoo e-invoicing integration page</a>.</p>
+
+        <div class="contact">
+            <p><strong>Orchida Soft Business Solutions</strong></p>
+            <p><a href="https://orchidatax.com/e-invoicing-integration-solutions/erp-integrations/odoo">Learn more about the Orchida Odoo integration</a></p>
+        </div>
+
+        <div class="footer">Orchida Soft | UAE E-Invoicing Integration for Odoo</div>
+    </div>
 </body>
 </html>
