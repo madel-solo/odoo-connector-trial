@@ -312,7 +312,7 @@ class AccountMove(models.Model):
 
     def action_open_orchida_uom_mapping(self):
         self.ensure_one()
-        action = self.env.ref('orchida_uae_e_invoicing_trial.action_orchida_uom_api_map').read()[0]
+        action = self.env.ref('orchida_uae_e_invoicing.action_orchida_uom_api_map').read()[0]
         action['domain'] = [('company_id', '=', self.company_id.id)]
         action['context'] = {
             'default_company_id': self.company_id.id,
