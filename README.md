@@ -11,7 +11,7 @@ Public UI-only trial modules for the Orchida UAE E-Invoicing Connector.
 | `18.0` | Odoo 18 |
 | `19.0` | Odoo 19 |
 
-Each version branch contains the complete `orchida_uae_e_invoicing`
+Each version branch contains the complete `orchida_uae_e_invoicing_trial`
 module in its own folder at repository root.
 
 ## Trial Scope
@@ -27,7 +27,7 @@ buttons show a message directing users to the full connector.
 ## Installation
 
 1. Select the branch for your Odoo version.
-2. Copy the `orchida_uae_e_invoicing/` folder into an Odoo addons path.
+2. Copy the `orchida_uae_e_invoicing_trial/` folder into an Odoo addons path.
 3. Update the Apps list and install **Orchida UAE E-Invoicing Connector for Odoo**.
 
 The module depends on Odoo `base`, `account`, and `product`.

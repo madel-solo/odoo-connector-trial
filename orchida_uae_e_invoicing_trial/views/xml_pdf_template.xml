@@ -4,8 +4,8 @@
         <field name="name">Orchida pdf Invoice</field>
         <field name="model">orchida.purchase.invoice</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">orchida_uae_e_invoicing.orchida_invoice_pdf_ubl_template</field>
-        <field name="report_file">orchida_uae_e_invoicing.orchida_invoice_pdf_ubl_template</field>
+        <field name="report_name">orchida_uae_e_invoicing_trial.orchida_invoice_pdf_ubl_template</field>
+        <field name="report_file">orchida_uae_e_invoicing_trial.orchida_invoice_pdf_ubl_template</field>
     </record>
 
 
