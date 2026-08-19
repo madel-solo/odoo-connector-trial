@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <menuitem name="E-Invoicing" id="menu_E-invoicing" web_icon="orchida_uae_e_invoicing/static/description/icon.jpg">
+    <menuitem name="E-Invoicing" id="menu_E-invoicing" web_icon="orchida_uae_e_invoicing_trial/static/description/icon.jpg">
         <menuitem id="menu_sent_invoice_parent" name="Invoices">
             <menuitem id="menu_invoices_to_send" name="To Submit" action="action_orchida_invoices_to_send" groups="account.group_account_user"/>
             <menuitem id="menu_sent_invoice" name="Submission History" action="action_api_sent_invoice"/>

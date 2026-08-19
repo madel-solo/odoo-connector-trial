@@ -34,7 +34,7 @@ class OrchidaPurchaseInvoice(models.Model):
 
     def action_view_pdf(self):
         return self.env.ref(
-            'orchida_uae_e_invoicing.report_orchida_invoice_pdf'
+            'orchida_uae_e_invoicing_trial.report_orchida_invoice_pdf'
         ).report_action(self)
 
     def _decode_invoice(self, data):
@@ -45,7 +45,7 @@ class OrchidaPurchaseInvoice(models.Model):
 
     def action_view_ubl_pdf(self):
         return self.env.ref(
-            'orchida_uae_e_invoicing.report_orchida_invoice_ubl_pdf'
+            'orchida_uae_e_invoicing_trial.report_orchida_invoice_ubl_pdf'
         ).report_action(self)
 
     def _find_or_create_supplier(self, parsed):

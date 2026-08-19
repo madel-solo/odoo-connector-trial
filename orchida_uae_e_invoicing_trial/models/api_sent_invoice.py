@@ -141,7 +141,7 @@ class ApiSentInvoice(models.Model):
             'res_model': 'api.sent.invoice',
             'view_mode': 'form',
             'view_id': self.env.ref(
-                'orchida_uae_e_invoicing.view_api_sent_invoice_technical_form'
+                'orchida_uae_e_invoicing_trial.view_api_sent_invoice_technical_form'
             ).id,
             'res_id': self.id,
             'target': 'new',
@@ -149,7 +149,7 @@ class ApiSentInvoice(models.Model):
 
     def action_open_submission_history(self):
         self.ensure_one()
-        action = self.env.ref('orchida_uae_e_invoicing.action_api_sent_invoice').read()[0]
+        action = self.env.ref('orchida_uae_e_invoicing_trial.action_api_sent_invoice').read()[0]
         action['domain'] = [('move_id', '=', self.move_id.id)]
         action['context'] = {'search_default_move_id': self.move_id.id}
         return action
