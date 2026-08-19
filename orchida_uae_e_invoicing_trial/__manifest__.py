@@ -1,7 +1,7 @@
 {
     'name': 'Orchida UAE E-Invoicing Connector for Odoo | FTA & PINT AE',
     'version': '16.0.1.0.3',
-    'summary': 'UAE FTA e-invoicing and PINT AE connector interface for Odoo Accounting',
+    'summary': 'UAE e-invoicing and UAE e-invoice interface for Odoo Accounting',
     'description': """
         Trial/demo module that reproduces the Orchida UAE E-Invoicing
         Connector's screens as UI only.
