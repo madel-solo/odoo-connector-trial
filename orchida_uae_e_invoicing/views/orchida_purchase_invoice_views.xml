@@ -80,7 +80,7 @@
 
 <menuitem id="menu_orchida_purchase_invoice"
               name="Purchase Invoices"
-              parent="orchida_uae_e_invoicing_trial.menu_sent_invoice_parent"
+              parent="orchida_uae_e_invoicing.menu_sent_invoice_parent"
               action="action_orchida_purchase_invoice"
               sequence="10"/>
 
